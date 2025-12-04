@@ -19,6 +19,7 @@
         "default_popup": "src/popup/popup.html",
         "default_icon": {
             "16": "icons/icon16-nobg.png",
+            "32": "icons/icon32-nobg.png",
             "48": "icons/icon48-nobg.png",
             "128": "icons/icon128-nobg.png"
         }
@@ -35,6 +36,7 @@
     ],
     "icons": {
         "16": "icons/icon16-nobg.png",
+        "32": "icons/icon32-nobg.png",
         "48": "icons/icon48-nobg.png",
         "128": "icons/icon128-nobg.png"
     }
