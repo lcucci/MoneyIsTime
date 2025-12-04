@@ -28,10 +28,13 @@ body {
 
 label {
   display: block;
-  margin-bottom: 6px;
   font-size: 0.92rem;
   font-weight: 600;
   color: #35404c;
+}
+
+#salary-type-label {
+  margin-top: 5px;
 }
 
 input,
@@ -122,8 +125,8 @@ select {
 
 .working-time-grid {
   display: grid;
-  grid-template-columns: 1fr 110px;
-  gap: 8px 12px;
+  grid-template-columns: 1fr 80px;
+  gap: 6px 8px;
   align-items: center;
   margin-top: 8px;
 }
@@ -132,11 +135,23 @@ select {
   margin-bottom: 0;
 }
 
+.working-time-grid input {
+  padding: 6px 6px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .logo {
   display: block;
-  margin: 18px auto 0;
   width: 36px;
   height: 36px;
+}
+
+.logo-title {
+  margin-top: 0;
 }
 
 .exclude-button {
@@ -158,8 +173,13 @@ select {
   color: #1b7f3d;
 }
 
-.exclude-button:hover:not(:disabled) {
-  background: currentColor;
+.exclude-button.exclude:hover:not(:disabled) {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.exclude-button.include:hover:not(:disabled) {
+  background: #1b7f3d;
   color: #fff;
 }
 

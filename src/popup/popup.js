@@ -120,11 +120,13 @@ function refreshExcludeButton() {
     btn.disabled = true;
     btn.textContent = t.cannot_determine_site || 'Unavailable';
     btn.classList.remove('include');
+    btn.classList.remove('exclude');
     return;
   }
 
   const isExcluded = (options.blacklist || []).includes(currentDomain);
   btn.disabled = false;
+  btn.classList.toggle('exclude', !isExcluded);
   btn.classList.toggle('include', isExcluded);
 
   const key = isExcluded ? 'include_site' : 'exclude_site';
