@@ -1,61 +1,34 @@
-# üí∞ MoneyIsTime
+# MoneyIsTime
 
-MoneyIsTime is a browser extension that transforms product prices into the equivalent amount of work time required to earn that amount. It is designed to help users make more mindful spending decisions by visualizing the cost of items in terms of their labor.
+MoneyIsTime is a browser extension that turns prices into the time you need to work to afford them.
 
-## üöÄ Features
+## Features
+- Price-to-time conversion using your salary, schedule, and currency
+- Live exchange rates from open.er-api.com
+- Multi-language labels for the popup and badges
+- Per-site blacklist toggle from the popup
 
-* **Real-time price conversion**: Automatically converts visible prices on webpages into equivalent work hours, minutes, and days.
-* **Customizable Settings**: Allows users to define their salary, currency, and working schedule to accurately calculate work time.
-* **Multi-language Support**: Supports multiple languages, including English, Italian, French, German, Spanish, Portuguese, Chinese, Japanese, Russian, Hindi, Arabic, and Turkish.
-* **Site Management**: Users can include or exclude specific sites where the extension operates.
-* **Compact Display**: Intuitively displays work time next to prices without cluttering the webpage.
-
-## üîß Installation
-
-Follow these steps to install MoneyIsTime in your browser:
-
+## Installation
 1. Clone this repository or download it as a ZIP file.
-2. Open your browser and navigate to the extensions page:
+2. Open the extensions page in your browser:
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+3. Enable Developer mode.
+4. Click "Load unpacked" and select the folder containing the extension files.
 
-   * **Chrome**: `chrome://extensions`
-   * **Edge**: `edge://extensions`
-3. Enable developer mode (usually found at the top right corner).
-4. Click on "Load unpacked" and select the folder containing the extension files.
+## Usage
+1. Open the extension popup and set salary, salary type, currency, working hours per day, working days per month, and language.
+2. Toggle the extension on or off.
+3. Use "Exclude/Include <domain>" to control where annotations appear.
+4. Prices on pages will show a badge with the estimated work time.
 
-## üéØ Usage
+## Project structure
+- `manifest.json` ó extension manifest.
+- `src/background/index.js` ó service worker for exchange rates and translations.
+- `src/content/content.js` ó content script that detects prices and renders badges.
+- `src/popup/*` ó popup markup, styles, and logic.
+- `assets/translations.json` ó locale strings for the popup and badges.
+- `icons/` ó extension icons.
 
-1. After installation, click the MoneyIsTime extension icon in your browser toolbar.
-2. Configure your settings by entering:
-
-   * Salary amount
-   * Salary type (hourly, daily, or monthly)
-   * Preferred currency
-   * Daily working hours
-   * Monthly working days
-   * Preferred language
-3. Enable or disable the extension as needed.
-
-Once configured, prices displayed on websites will automatically include the equivalent work time required to earn that amount.
-
-## ‚öôÔ∏è Configuration Options
-
-* **Salary**: Enter your actual salary for accurate calculations.
-* **Currency**: Choose your local currency from the available options.
-* **Working Hours per Day**: Define how many hours you typically work in a day.
-* **Working Days per Month**: Specify your monthly working days.
-* **Blacklist**: Add websites to exclude from the price conversion feature.
-
-## üõ†Ô∏è Technologies Used
-
-* JavaScript
-* HTML/CSS
-* Chrome Extensions API
-* ExchangeRate API for real-time currency conversions
-
-## ü§ù Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for improvements, new features, or bug fixes.
-
-## üìÑ License
-
-This project is licensed under the MIT License.
+## License
+MIT

@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  padding: 14px;
+  min-width: 260px;
+  background: #f7f9fb;
+  color: #1f2933;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.field {
+  margin-top: 12px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #35404c;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  border: 1px solid #c9d4e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2933;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #cbd5e1;
+  transition: 0.3s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+.group-box {
+  border: 1px solid #d6e0ea;
+  border-radius: 10px;
+  padding: 14px 12px 12px;
+  margin-top: 18px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.group-title {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  padding: 0 8px;
+  background: #f7f9fb;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #3d4c5a;
+}
+
+.salary-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.currency-select {
+  max-width: 90px;
+}
+
+.working-time-grid {
+  display: grid;
+  grid-template-columns: 1fr 110px;
+  gap: 8px 12px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.working-time-grid label {
+  margin-bottom: 0;
+}
+
+.logo {
+  display: block;
+  margin: 18px auto 0;
+  width: 36px;
+  height: 36px;
+}
+
+.exclude-button {
+  display: block;
+  width: 100%;
+  margin-top: 18px;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #d32f2f;
+  background: #fff;
+  color: #d32f2f;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.exclude-button.include {
+  border-color: #1b7f3d;
+  color: #1b7f3d;
+}
+
+.exclude-button:hover:not(:disabled) {
+  background: currentColor;
+  color: #fff;
+}
+
+.exclude-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
