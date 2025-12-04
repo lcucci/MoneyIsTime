@@ -29,8 +29,8 @@ Browser extension that converts product prices into the amount of work time requ
 
 1. Clone or download this repository.
 2. Open:
-   - Chrome: chrome://extensions
-   - Edge: edge://extensions
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
 3. Enable Developer mode.
 4. Click Load unpacked.
 5. Select the folder containing manifest.json.
@@ -63,7 +63,7 @@ Browser extension that converts product prices into the amount of work time requ
 
 ## 🤝 Contributing
 
-Pull requests are welcome. For major enhancements, open an issue first to discuss proposed changes or features.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 
 ## 📄 License
