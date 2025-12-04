@@ -56,7 +56,7 @@ Estensione browser che converte i prezzi dei prodotti nel tempo di lavoro necess
 └── README.it.md                    # Documentazione del progetto (versione italiana)
 ```
 
-## 🤝 Contributi
+## 🤝 Contribuire
 
 Le pull request sono benvenute. Per modifiche importanti, apri prima una issue per discutere ciò che desideri proporre.
 
