@@ -10,6 +10,7 @@
     language: 'en'
   };
 
+  const DEFAULT_LANGUAGE = 'en';
   const currencySymbols = {
     '$': 'USD',
     '€': 'EUR',
@@ -27,13 +28,14 @@
   const currencyCodes = Object.values(currencySymbols);
   const processedClass = 'money-is-time-processed';
   const ratesCache = {};
-  const FALLBACK_TRANSLATIONS = {
+  const DEFAULT_TRANSLATIONS = {
     minutes_unit: 'minutes',
     hours_unit: 'hours',
     days_unit: 'days',
     months_unit: 'months',
     years_unit: 'years'
   };
+  const localeCache = {};
   let translations = {};
   let priceRegex;
 
@@ -57,15 +59,39 @@
     return new Promise((resolve) => chrome.storage.local.get(DEFAULT_SETTINGS, resolve));
   }
 
-  function loadTranslations(language) {
-    return sendMessage({ type: 'getTranslations' })
-      .then((response) => {
-        const map = response?.translations || {};
-        const fallback = { ...FALLBACK_TRANSLATIONS, ...(map.en || {}) };
-        const localized = map[language] || {};
-        return { ...fallback, ...localized };
-      })
-      .catch(() => ({ ...FALLBACK_TRANSLATIONS }));
+  async function loadTranslations(language) {
+    const base = await loadLocale(DEFAULT_LANGUAGE, DEFAULT_TRANSLATIONS);
+    if (language === DEFAULT_LANGUAGE) return base;
+
+    const localized = await loadLocale(language);
+    return { ...base, ...localized };
+  }
+
+  async function loadLocale(language, fallback = {}) {
+    const normalized = normalizeLocale(language);
+    if (localeCache[normalized]) return localeCache[normalized];
+
+    try {
+      const url = chrome.runtime.getURL(`_locales/${normalized}/messages.json`);
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Missing locale');
+      const data = await response.json();
+      const parsed = parseMessages(data);
+      localeCache[normalized] = parsed;
+      return parsed;
+    } catch (error) {
+      return fallback;
+    }
+  }
+
+  function parseMessages(raw) {
+    return Object.fromEntries(
+      Object.entries(raw || {}).map(([key, value]) => [key, value?.message || ''])
+    );
+  }
+
+  function normalizeLocale(language) {
+    return (language || DEFAULT_LANGUAGE).replace('-', '_');
   }
 
   function sendMessage(payload) {

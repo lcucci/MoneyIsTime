@@ -6,11 +6,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true;
   }
 
-  if (message.type === 'getTranslations') {
-    handleTranslationsRequest(sendResponse);
-    return true;
-  }
-
   return false;
 });
 
@@ -22,15 +17,5 @@ async function handleRatesRequest(baseCurrency, sendResponse) {
     sendResponse({ rates: data.rates || {} });
   } catch (error) {
     sendResponse({ rates: {}, error: error.message });
-  }
-}
-
-async function handleTranslationsRequest(sendResponse) {
-  try {
-    const response = await fetch(chrome.runtime.getURL('assets/translations.json'));
-    const data = await response.json();
-    sendResponse({ translations: data });
-  } catch (error) {
-    sendResponse({ translations: {}, error: error.message });
   }
 }

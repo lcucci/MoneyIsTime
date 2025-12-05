@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "सेटिंग्स" },
+  "salary_label": { "message": "वेतन" },
+  "salary_type_label": { "message": "वेतन का प्रकार" },
+  "salary_type_hourly": { "message": "प्रति घंटा" },
+  "salary_type_daily": { "message": "दैनिक" },
+  "salary_type_monthly": { "message": "मासिक" },
+  "working_time_group_label": { "message": "कार्य समय" },
+  "working_hours_per_day_label": { "message": "प्रति दिन कार्य घंटे" },
+  "working_days_per_month_label": { "message": "प्रति माह कार्य दिवस" },
+  "language_label": { "message": "भाषा" },
+  "minutes_unit": { "message": "मिनट" },
+  "hours_unit": { "message": "घंटे" },
+  "days_unit": { "message": "दिन" },
+  "months_unit": { "message": "महीने" },
+  "years_unit": { "message": "वर्ष" },
+  "exclude_site": { "message": "साइट को बाहर करें" },
+  "include_site": { "message": "साइट को शामिल करें" },
+  "cannot_determine_site": { "message": "साइट निर्धारित नहीं की जा सकी" }
+}

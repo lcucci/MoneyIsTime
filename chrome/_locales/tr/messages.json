@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "Ayarlar" },
+  "salary_label": { "message": "Maaş" },
+  "salary_type_label": { "message": "Maaş türü" },
+  "salary_type_hourly": { "message": "Saatlik" },
+  "salary_type_daily": { "message": "Günlük" },
+  "salary_type_monthly": { "message": "Aylık" },
+  "working_time_group_label": { "message": "Çalışma süresi" },
+  "working_hours_per_day_label": { "message": "Günlük çalışma saati" },
+  "working_days_per_month_label": { "message": "Aylık çalışma günü" },
+  "language_label": { "message": "Dil" },
+  "minutes_unit": { "message": "dakika" },
+  "hours_unit": { "message": "saat" },
+  "days_unit": { "message": "gün" },
+  "months_unit": { "message": "ay" },
+  "years_unit": { "message": "yıl" },
+  "exclude_site": { "message": "Hariç tut" },
+  "include_site": { "message": "Dahil et" },
+  "cannot_determine_site": { "message": "Site belirlenemedi" }
+}

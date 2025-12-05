@@ -3,6 +3,7 @@
     "name": "Money Is Time",
     "version": "1.1.0",
     "description": "Shows how much work time corresponds to prices",
+    "default_locale": "en",
     "background": {
         "service_worker": "src/background/index.js"
     },

@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "设置" },
+  "salary_label": { "message": "薪资" },
+  "salary_type_label": { "message": "薪资类型" },
+  "salary_type_hourly": { "message": "按小时" },
+  "salary_type_daily": { "message": "按天" },
+  "salary_type_monthly": { "message": "按月" },
+  "working_time_group_label": { "message": "工作时间" },
+  "working_hours_per_day_label": { "message": "每天工作小时数" },
+  "working_days_per_month_label": { "message": "每月工作天数" },
+  "language_label": { "message": "语言" },
+  "minutes_unit": { "message": "分钟" },
+  "hours_unit": { "message": "小时" },
+  "days_unit": { "message": "天" },
+  "months_unit": { "message": "月" },
+  "years_unit": { "message": "年" },
+  "exclude_site": { "message": "排除" },
+  "include_site": { "message": "包含" },
+  "cannot_determine_site": { "message": "无法确定站点" }
+}

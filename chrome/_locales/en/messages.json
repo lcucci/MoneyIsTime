@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "Settings" },
+  "salary_label": { "message": "Salary" },
+  "salary_type_label": { "message": "Salary type" },
+  "salary_type_hourly": { "message": "Hourly" },
+  "salary_type_daily": { "message": "Daily" },
+  "salary_type_monthly": { "message": "Monthly" },
+  "working_time_group_label": { "message": "Working time" },
+  "working_hours_per_day_label": { "message": "Working hours per day" },
+  "working_days_per_month_label": { "message": "Working days per month" },
+  "language_label": { "message": "Language" },
+  "minutes_unit": { "message": "minutes" },
+  "hours_unit": { "message": "hours" },
+  "days_unit": { "message": "days" },
+  "months_unit": { "message": "months" },
+  "years_unit": { "message": "years" },
+  "exclude_site": { "message": "Exclude" },
+  "include_site": { "message": "Include" },
+  "cannot_determine_site": { "message": "Cannot determine site" }
+}

@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "الإعدادات" },
+  "salary_label": { "message": "الراتب" },
+  "salary_type_label": { "message": "نوع الراتب" },
+  "salary_type_hourly": { "message": "بالساعة" },
+  "salary_type_daily": { "message": "يومي" },
+  "salary_type_monthly": { "message": "شهري" },
+  "working_time_group_label": { "message": "وقت العمل" },
+  "working_hours_per_day_label": { "message": "ساعات العمل في اليوم" },
+  "working_days_per_month_label": { "message": "أيام العمل في الشهر" },
+  "language_label": { "message": "اللغة" },
+  "minutes_unit": { "message": "دقيقة" },
+  "hours_unit": { "message": "ساعة" },
+  "days_unit": { "message": "يوم" },
+  "months_unit": { "message": "شهر" },
+  "years_unit": { "message": "سنة" },
+  "exclude_site": { "message": "استبعاد" },
+  "include_site": { "message": "تضمين" },
+  "cannot_determine_site": { "message": "تعذر تحديد الموقع" }
+}

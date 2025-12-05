@@ -9,41 +9,41 @@ const DEFAULT_OPTIONS = {
   blacklist: []
 };
 
-const FALLBACK_TRANSLATIONS = {
-  en: {
-    settings_label: 'Settings',
-    salary_label: 'Salary',
-    salary_type_label: 'Salary type',
-    salary_type_hourly: 'Hourly',
-    salary_type_daily: 'Daily',
-    salary_type_monthly: 'Monthly',
-    working_time_group_label: 'Working time',
-    working_hours_per_day_label: 'Working hours per day',
-    working_days_per_month_label: 'Working days per month',
-    language_label: 'Language',
-    minutes_unit: 'minutes',
-    hours_unit: 'hours',
-    days_unit: 'days',
-    months_unit: 'months',
-    years_unit: 'years',
-    exclude_site: 'Exclude',
-    include_site: 'Include',
-    cannot_determine_site: 'Cannot determine site'
-  }
+const DEFAULT_LANGUAGE = 'en';
+const DEFAULT_TRANSLATIONS = {
+  settings_label: 'Settings',
+  salary_label: 'Salary',
+  salary_type_label: 'Salary type',
+  salary_type_hourly: 'Hourly',
+  salary_type_daily: 'Daily',
+  salary_type_monthly: 'Monthly',
+  working_time_group_label: 'Working time',
+  working_hours_per_day_label: 'Working hours per day',
+  working_days_per_month_label: 'Working days per month',
+  language_label: 'Language',
+  minutes_unit: 'minutes',
+  hours_unit: 'hours',
+  days_unit: 'days',
+  months_unit: 'months',
+  years_unit: 'years',
+  exclude_site: 'Exclude',
+  include_site: 'Include',
+  cannot_determine_site: 'Cannot determine site'
 };
 
 let translations = {};
 let options = { ...DEFAULT_OPTIONS };
 let currentDomain = null;
+const localeCache = {};
 
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
-  translations = await loadTranslations();
   options = await getOptions();
+  translations = await loadTranslations(options.language);
   currentDomain = await getCurrentTabDomain();
 
-  applyTranslations(options.language);
+  applyTranslations();
   populateForm(options);
   refreshExcludeButton();
   bindEvents();
@@ -53,15 +53,40 @@ function $(id) {
   return document.getElementById(id);
 }
 
-async function loadTranslations() {
+async function loadTranslations(language = DEFAULT_LANGUAGE) {
+  const base = await loadLocale(DEFAULT_LANGUAGE, DEFAULT_TRANSLATIONS);
+  if (language === DEFAULT_LANGUAGE) return base;
+
+  const localized = await loadLocale(language);
+  return { ...base, ...localized };
+}
+
+async function loadLocale(language, fallback = {}) {
+  const normalized = normalizeLocale(language);
+  if (localeCache[normalized]) return localeCache[normalized];
+
   try {
-    const response = await fetch(chrome.runtime.getURL('assets/translations.json'));
+    const url = chrome.runtime.getURL(`_locales/${normalized}/messages.json`);
+    const response = await fetch(url);
+    if (!response.ok) throw new Error('Missing locale');
     const data = await response.json();
-    return { ...FALLBACK_TRANSLATIONS, ...data };
+    const parsed = parseMessages(data);
+    localeCache[normalized] = parsed;
+    return parsed;
   } catch (error) {
     console.warn('[MoneyIsTime] Using fallback translations', error);
-    return FALLBACK_TRANSLATIONS;
+    return fallback;
   }
+}
+
+function parseMessages(raw) {
+  return Object.fromEntries(
+    Object.entries(raw || {}).map(([key, value]) => [key, value?.message || ''])
+  );
+}
+
+function normalizeLocale(language) {
+  return (language || DEFAULT_LANGUAGE).replace('-', '_');
 }
 
 function getOptions() {
@@ -82,23 +107,27 @@ function populateForm(data) {
   $('salary-type').value = data.salaryType;
 }
 
-function applyTranslations(lang) {
-  const t = translations[lang] || translations.en || {};
+function applyTranslations() {
+  const t = translations || DEFAULT_TRANSLATIONS;
 
-  $('header-title').textContent = t.settings_label;
-  $('language-label').textContent = t.language_label;
-  $('group-salary-title').textContent = t.salary_label;
-  $('group-working-title').textContent = t.working_time_group_label;
-  $('working-hours-label').textContent = t.working_hours_per_day_label;
-  $('working-days-label').textContent = t.working_days_per_month_label;
-  $('salary-type-label').textContent = t.salary_type_label || t.salary_label;
+  $('header-title').textContent = t.settings_label || DEFAULT_TRANSLATIONS.settings_label;
+  $('language-label').textContent = t.language_label || DEFAULT_TRANSLATIONS.language_label;
+  $('group-salary-title').textContent = t.salary_label || DEFAULT_TRANSLATIONS.salary_label;
+  $('group-working-title').textContent =
+    t.working_time_group_label || DEFAULT_TRANSLATIONS.working_time_group_label;
+  $('working-hours-label').textContent =
+    t.working_hours_per_day_label || DEFAULT_TRANSLATIONS.working_hours_per_day_label;
+  $('working-days-label').textContent =
+    t.working_days_per_month_label || DEFAULT_TRANSLATIONS.working_days_per_month_label;
+  $('salary-type-label').textContent =
+    t.salary_type_label || t.salary_label || DEFAULT_TRANSLATIONS.salary_type_label;
 
   const salaryTypeSelect = $('salary-type');
   const currentValue = salaryTypeSelect.value || options.salaryType;
   salaryTypeSelect.innerHTML = `
-    <option value="hourly">${t.salary_type_hourly}</option>
-    <option value="daily">${t.salary_type_daily}</option>
-    <option value="monthly">${t.salary_type_monthly}</option>
+    <option value="hourly">${t.salary_type_hourly || DEFAULT_TRANSLATIONS.salary_type_hourly}</option>
+    <option value="daily">${t.salary_type_daily || DEFAULT_TRANSLATIONS.salary_type_daily}</option>
+    <option value="monthly">${t.salary_type_monthly || DEFAULT_TRANSLATIONS.salary_type_monthly}</option>
   `;
   salaryTypeSelect.value = currentValue;
 }
@@ -114,11 +143,11 @@ async function getCurrentTabDomain() {
 
 function refreshExcludeButton() {
   const btn = $('exclude-site-button');
-  const t = translations[options.language] || translations.en || {};
+  const t = translations || DEFAULT_TRANSLATIONS;
 
   if (!currentDomain) {
     btn.disabled = true;
-    btn.textContent = t.cannot_determine_site || 'Unavailable';
+    btn.textContent = t.cannot_determine_site || DEFAULT_TRANSLATIONS.cannot_determine_site || 'Unavailable';
     btn.classList.remove('include');
     btn.classList.remove('exclude');
     return;
@@ -130,15 +159,17 @@ function refreshExcludeButton() {
   btn.classList.toggle('include', isExcluded);
 
   const key = isExcluded ? 'include_site' : 'exclude_site';
-  btn.textContent = `${t[key]} ${currentDomain}`;
+  const label = t[key] || DEFAULT_TRANSLATIONS[key] || '';
+  btn.textContent = `${label} ${currentDomain}`;
 }
 
 function bindEvents() {
   $('settings-form').addEventListener('input', () => saveOptions());
 
-  $('language').addEventListener('change', (event) => {
+  $('language').addEventListener('change', async (event) => {
     options.language = event.target.value;
-    applyTranslations(options.language);
+    translations = await loadTranslations(options.language);
+    applyTranslations();
     refreshExcludeButton();
     saveOptionsImmediate();
   });

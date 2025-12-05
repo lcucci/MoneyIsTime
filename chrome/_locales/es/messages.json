@@ -1,0 +1,20 @@
+{
+  "settings_label": { "message": "Configuración" },
+  "salary_label": { "message": "Salario" },
+  "salary_type_label": { "message": "Tipo de salario" },
+  "salary_type_hourly": { "message": "Por hora" },
+  "salary_type_daily": { "message": "Diario" },
+  "salary_type_monthly": { "message": "Mensual" },
+  "working_time_group_label": { "message": "Horario laboral" },
+  "working_hours_per_day_label": { "message": "Horas de trabajo al día" },
+  "working_days_per_month_label": { "message": "Días laborales al mes" },
+  "language_label": { "message": "Idioma" },
+  "minutes_unit": { "message": "minutos" },
+  "hours_unit": { "message": "horas" },
+  "days_unit": { "message": "días" },
+  "months_unit": { "message": "meses" },
+  "years_unit": { "message": "años" },
+  "exclude_site": { "message": "Excluir" },
+  "include_site": { "message": "Incluir" },
+  "cannot_determine_site": { "message": "No se puede determinar el sitio" }
+}
