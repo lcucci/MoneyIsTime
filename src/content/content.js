@@ -166,12 +166,24 @@
     const dotCount = (value.match(/\./g) || []).length;
     const commaCount = (value.match(/,/g) || []).length;
 
-    if (dotCount > 1 && commaCount === 0) return value.replace(/\./g, '');
-    if (commaCount > 1 && dotCount === 0) return value.replace(/,/g, '');
-    if (commaCount && dotCount > 1) return value.replace(/,/g, '').replace(/\./g, '');
-    if (dotCount && commaCount) return value.replace(/\./g, '').replace(',', '.');
-    if (commaCount === 1 && dotCount === 0) return value.replace(',', '.');
-    if (dotCount === 1 && commaCount === 0 && /^\d{1,3}\.\d{3}$/.test(value)) return value.replace('.', '');
+    if (dotCount && commaCount) {
+      const decimalSeparator = value.lastIndexOf(',') > value.lastIndexOf('.') ? ',' : '.';
+      const thousandsSeparator = decimalSeparator === ',' ? '.' : ',';
+      return value
+        .replace(new RegExp(`\\${thousandsSeparator}`, 'g'), '')
+        .replace(decimalSeparator, '.');
+    }
+
+    if (commaCount && !dotCount) {
+      if (/^\d{1,3}(,\d{3})+$/.test(value)) return value.replace(/,/g, '');
+      return value.replace(',', '.');
+    }
+
+    if (dotCount && !commaCount) {
+      if (/^\d{1,3}(\.\d{3})+$/.test(value)) return value.replace(/\./g, '');
+      return value;
+    }
+
     return value;
   }
 
