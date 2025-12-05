@@ -39,10 +39,10 @@ Estensione browser che converte i prezzi dei prodotti nel tempo di lavoro necess
 ├── assets/                         # Risorse statiche e file di traduzione
 │   └── translations.json
 ├── icons/                          # Icone utilizzate dall'estensione in vari formati
-│   ├── icon16-nobg.png
+│   ├── icon16.png
 │   ├── icon32.png
-│   ├── icon48-nobg.png
-│   └── icon128-nobg.png
+│   ├── icon48.png
+│   └── icon128.png
 ├── src/
 │   ├── background/
 │   │   └── index.js                # Service Worker: recupera tassi di cambio e traduzioni

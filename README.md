@@ -29,7 +29,7 @@ Browser extension that converts product prices into the amount of work time requ
 
 1. Clone or download this repository.
 2. Open:
-   - Chrome: `chrome://extensions`
+   - Chrome: `cloudchrome://extensions`
    - Edge: `edge://extensions`
 3. Enable Developer mode.
 4. Click Load unpacked.
@@ -43,10 +43,10 @@ Browser extension that converts product prices into the amount of work time requ
 ├── assets/                         # Static resources and translation files
 │   └── translations.json
 ├── icons/                          # Icons used by the extension at various sizes
-│   ├── icon16-nobg.png
+│   ├── icon16.png
 │   ├── icon32.png
-│   ├── icon48-nobg.png
-│   └── icon128-nobg.png
+│   ├── icon48.png
+│   └── icon128.png
 ├── src/
 │   ├── background/
 │   │   └── index.js                # Service Worker: fetches exchange rates and translations
