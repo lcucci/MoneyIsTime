@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "Mostra quanto tempo di lavoro corrisponde ai prezzi" },
   "settings_label": { "message": "Impostazioni" },
   "salary_label": { "message": "Retribuzione" },
   "salary_type_label": { "message": "Tipo di retribuzione" },

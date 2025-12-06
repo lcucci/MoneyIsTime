@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "يُظهر مقدار وقت العمل الذي يقابل الأسعار" },
   "settings_label": { "message": "الإعدادات" },
   "salary_label": { "message": "الراتب" },
   "salary_type_label": { "message": "نوع الراتب" },

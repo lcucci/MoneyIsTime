@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "価格がどれだけの労働時間に相当するかを表示" },
   "settings_label": { "message": "設定" },
   "salary_label": { "message": "給与" },
   "salary_type_label": { "message": "給与タイプ" },

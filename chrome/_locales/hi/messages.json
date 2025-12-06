@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "मूल्य के हिसाब से कितना कार्य समय चाहिए, यह दिखाता है" },
   "settings_label": { "message": "सेटिंग्स" },
   "salary_label": { "message": "वेतन" },
   "salary_type_label": { "message": "वेतन का प्रकार" },

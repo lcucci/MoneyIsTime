@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "显示价格对应的工作时间" },
   "settings_label": { "message": "设置" },
   "salary_label": { "message": "薪资" },
   "salary_type_label": { "message": "薪资类型" },

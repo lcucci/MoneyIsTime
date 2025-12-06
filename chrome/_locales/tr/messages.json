@@ -1,4 +1,6 @@
 {
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "Fiyatların ne kadar çalışma süresine denk geldiğini gösterir" },
   "settings_label": { "message": "Ayarlar" },
   "salary_label": { "message": "Maaş" },
   "salary_type_label": { "message": "Maaş türü" },
