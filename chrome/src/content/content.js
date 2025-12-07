@@ -12,18 +12,69 @@
 
   const DEFAULT_LANGUAGE = 'en';
   const currencySymbols = {
-    '$': 'USD',
-    '€': 'EUR',
-    '£': 'GBP',
-    '¥': 'JPY',
-    '₹': 'INR',
-    'C$': 'CAD',
+    // AED (ar)
+    'AED': 'AED',
+
+    // ARS (es)
+    'ARS': 'ARS',
+
+    // AUD (en)
+    'AUD': 'AUD',
     'A$': 'AUD',
-    'CHF': 'CHF',
-    '₽': 'RUB',
+
+    // BRL (pt-BR)
+    'BRL': 'BRL',
     'R$': 'BRL',
-    '₺': 'TRY'
+
+    // CAD (en, fr)
+    'CAD': 'CAD',
+    'C$': 'CAD',
+
+    // CHF (de, fr, it)
+    'CHF': 'CHF',
+
+    // CNY (zh-CN)
+    'CNY': 'CNY',
+    'CN¥': 'CNY',
+
+    // COP (es)
+    'COP': 'COP',
+
+    // EUR (it, de, fr, es, pt-BR ecc.)
+    'EUR': 'EUR',
+    '€': 'EUR',
+
+    // GBP (en)
+    'GBP': 'GBP',
+    '£': 'GBP',
+
+    // INR (hi)
+    'INR': 'INR',
+    '₹': 'INR',
+
+    // JPY (ja)
+    'JPY': 'JPY',
+    '¥': 'JPY',
+
+    // MXN (es)
+    'MXN': 'MXN',
+
+    // RUB (ru)
+    'RUB': 'RUB',
+    '₽': 'RUB',
+
+    // SAR (ar)
+    'SAR': 'SAR',
+
+    // TRY (tr)
+    'TRY': 'TRY',
+    '₺': 'TRY',
+
+    // USD (en)
+    'USD': 'USD',
+    '$': 'USD'
   };
+
 
   const currencyCodes = Object.values(currencySymbols);
   const processedClass = 'money-is-time-processed';
