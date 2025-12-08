@@ -1,0 +1,22 @@
+{
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "Показывает, сколько рабочего времени соответствует ценам" },
+  "settings_label": { "message": "Настройки" },
+  "salary_label": { "message": "Зарплата" },
+  "salary_type_label": { "message": "Тип зарплаты" },
+  "salary_type_hourly": { "message": "Почасовая" },
+  "salary_type_daily": { "message": "Дневная" },
+  "salary_type_monthly": { "message": "Ежемесячная" },
+  "working_time_group_label": { "message": "Рабочее время" },
+  "working_hours_per_day_label": { "message": "Рабочих часов в день" },
+  "working_days_per_month_label": { "message": "Рабочих дней в месяц" },
+  "language_label": { "message": "Язык" },
+  "minutes_unit": { "message": "минуты" },
+  "hours_unit": { "message": "часы" },
+  "days_unit": { "message": "дни" },
+  "months_unit": { "message": "месяцы" },
+  "years_unit": { "message": "годы" },
+  "exclude_site": { "message": "Исключить" },
+  "include_site": { "message": "Включить" },
+  "cannot_determine_site": { "message": "Не удалось определить сайт" }
+}

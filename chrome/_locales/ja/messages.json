@@ -1,0 +1,22 @@
+{
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "価格がどれだけの労働時間に相当するかを表示" },
+  "settings_label": { "message": "設定" },
+  "salary_label": { "message": "給与" },
+  "salary_type_label": { "message": "給与タイプ" },
+  "salary_type_hourly": { "message": "時給" },
+  "salary_type_daily": { "message": "日給" },
+  "salary_type_monthly": { "message": "月給" },
+  "working_time_group_label": { "message": "勤務時間" },
+  "working_hours_per_day_label": { "message": "1日あたりの勤務時間" },
+  "working_days_per_month_label": { "message": "1か月あたりの勤務日数" },
+  "language_label": { "message": "言語" },
+  "minutes_unit": { "message": "分" },
+  "hours_unit": { "message": "時間" },
+  "days_unit": { "message": "日" },
+  "months_unit": { "message": "月" },
+  "years_unit": { "message": "年" },
+  "exclude_site": { "message": "サイトを除外" },
+  "include_site": { "message": "サイトを含める" },
+  "cannot_determine_site": { "message": "サイトを判別できません" }
+}

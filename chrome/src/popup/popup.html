@@ -1,38 +1,41 @@
-<!-- popup.html -->
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Work Time Price</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money is Time</title>
   <link rel="stylesheet" href="popup.css">
 </head>
-
 <body>
+  <div class="logo-container">
+    <img src="../../icons/icon.png" alt="Money is Time logo" class="logo">
+    <h1 class="logo-title">Money is Time</h1>
+  </div>
   <form id="settings-form">
     <div class="header">
       <div class="header-title" id="header-title">Settings</div>
+      <label class="switch" aria-label="Toggle extension">
+        <input type="checkbox" id="enabled">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="field">
+      <label for="language" id="language-label">Language</label>
       <select id="language">
         <option value="ar">العربية</option>
         <option value="de">Deutsch</option>
         <option value="en">English</option>
         <option value="es">Español</option>
         <option value="fr">Français</option>
-        <option value="hi">हिन्दी</option>
+        <option value="hi">हिंदी</option>
         <option value="it">Italiano</option>
         <option value="ja">日本語</option>
-        <option value="pt-BR">Português</option>
+        <option value="pt-BR">Português (BR)</option>
         <option value="ru">Русский</option>
         <option value="tr">Türkçe</option>
         <option value="zh-CN">简体中文</option>
       </select>
-    </div>
-
-    <div class="toggle-container">
-      <label class="switch">
-        <input type="checkbox" id="enabled">
-        <span class="slider"></span>
-      </label>
     </div>
 
     <div class="group-box">
@@ -40,21 +43,27 @@
       <div class="salary-container">
         <input type="number" id="salary" step="0.5" min="0.01" required>
         <select id="currency" class="currency-select">
+          <option value="AED">AED</option>
+          <option value="ARS">ARS</option>
           <option value="AUD">AUD</option>
           <option value="BRL">BRL</option>
           <option value="CAD">CAD</option>
           <option value="CHF">CHF</option>
+          <option value="CNY">CNY</option>
+          <option value="COP">COP</option>
           <option value="EUR">EUR</option>
           <option value="GBP">GBP</option>
           <option value="INR">INR</option>
           <option value="JPY">JPY</option>
+          <option value="MXN">MXN</option>
           <option value="RUB">RUB</option>
+          <option value="SAR">SAR</option>
           <option value="TRY">TRY</option>
-          <option value="USD" selected>USD</option>
+          <option value="USD">USD</option>
         </select>
       </div>
 
-      <label id="salary-type-label"></label>
+      <label id="salary-type-label" for="salary-type">Salary type</label>
       <select id="salary-type"></select>
     </div>
 
@@ -69,11 +78,10 @@
       </div>
     </div>
 
-    <button type="button" id="exclude-site-button" class="exclude-button">Exclude www.example.com</button>
+    <button type="button" id="exclude-site-button" class="exclude-button">Exclude current site</button>
 
-    <img src="icons/icon-nobg.png" alt="Logo" class="logo">
+
   </form>
   <script src="popup.js"></script>
 </body>
-
 </html>

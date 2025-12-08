@@ -1,60 +1,67 @@
-# 💰 MoneyIsTime
+# MoneyIsTime
 
-MoneyIsTime is a browser extension that transforms product prices into the equivalent amount of work time required to earn that amount. It is designed to help users make more mindful spending decisions by visualizing the cost of items in terms of their labor.
+[![en](https://img.shields.io/badge/lang-italiano-green.svg)](https://github.com/lcucci/MoneyIsTime/blob/main/README.it.md)
 
-## 🚀 Features
+Browser extension that converts product prices into the amount of work time required to afford them.
 
-* **Real-time price conversion**: Automatically converts visible prices on webpages into equivalent work hours, minutes, and days.
-* **Customizable Settings**: Allows users to define their salary, currency, and working schedule to accurately calculate work time.
-* **Multi-language Support**: Supports multiple languages, including English, Italian, French, German, Spanish, Portuguese, Chinese, Japanese, Russian, Hindi, Arabic, and Turkish.
-* **Site Management**: Users can include or exclude specific sites where the extension operates.
-* **Compact Display**: Intuitively displays work time next to prices without cluttering the webpage.
 
-## 🔧 Installation
+## ✨ Features
 
-Follow these steps to install MoneyIsTime in your browser:
+* **Real-time price annotation**: Automatically detects prices on any webpage and displays the equivalent work time needed based on your salary settings.
+* **Multiple salary modes**: Hourly, daily, or monthly salary, with customizable working hours/day and days/month.
+* **Automatic currency detection & conversion**: Supports price strings with symbols (€ $, £…) or ISO codes, with conversion using live exchange rates from open.er-api.com.
+* **Multilingual interface**: Full popup and badge localization.
+* **Per-site blacklist**: Quickly disable the extension on specific domains directly from the popup.
 
-1. Clone this repository or download it as a ZIP file.
-2. Open your browser and navigate to the extensions page:
 
-   * **Chrome**: `chrome://extensions`
-   * **Edge**: `edge://extensions`
-3. Enable developer mode (usually found at the top right corner).
-4. Click on "Load unpacked" and select the folder containing the extension files.
+## 🛠️ Technologies used
 
-## 🎯 Usage
+* JavaScript (Manifest V3)
+* Browser APIs:
+   - chrome.storage
+   - chrome.tabs
+   - chrome.runtime messaging
+* Live exchange rate API: https://open.er-api.com
+* HTML/CSS for popup UI
 
-1. After installation, click the MoneyIsTime extension icon in your browser toolbar.
-2. Configure your settings by entering:
 
-   * Salary amount
-   * Salary type (hourly, daily, or monthly)
-   * Preferred currency
-   * Daily working hours
-   * Monthly working days
-   * Preferred language
-3. Enable or disable the extension as needed.
+## 🚀 Deployment
 
-Once configured, prices displayed on websites will automatically include the equivalent work time required to earn that amount.
+1. Clone or download this repository.
+2. Open:
+   - Chrome: `cloudchrome://extensions`
+   - Edge: `edge://extensions`
+3. Enable Developer mode.
+4. Click Load unpacked.
+5. Select the folder containing manifest.json.
 
-## ⚙️ Configuration Options
 
-* **Salary**: Enter your actual salary for accurate calculations.
-* **Currency**: Choose your local currency from the available options.
-* **Working Hours per Day**: Define how many hours you typically work in a day.
-* **Working Days per Month**: Specify your monthly working days.
-* **Blacklist**: Add websites to exclude from the price conversion feature.
+## 🗂️ Project structure
 
-## 🛠️ Technologies Used
+```plaintext
+.
+├── chrome/                         # Chrome extension code
+│   ├── icons/                      # Icons used by the extension in various formats
+│   ├── _locales/                   # Translations for popup and badge
+│   ├── src/
+│   │   ├── background/
+│   │   │   └── index.js            # Service worker for exchange rates and translations
+│   │   ├── content/
+│   │   │   └── content.js          # Injected script that detects prices and adds badges
+│   │   └── popup/
+│   │       ├── popup.html          # Settings popup structure
+│   │       ├── popup.css           # Popup interface styles
+│   │       └── popup.js            # Logic for saving, language, and domain blacklist
+│   └────────── manifest.json       # Extension configuration (MV3)
+├── firefox/                        # Firefox extension code (work in progress)
+└── README.md                       # Project documentation
+```
 
-* JavaScript
-* HTML/CSS
-* Chrome Extensions API
-* ExchangeRate API for real-time currency conversions
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for improvements, new features, or bug fixes.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
 
 ## 📄 License
 

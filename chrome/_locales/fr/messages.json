@@ -1,0 +1,22 @@
+{
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "Affiche le temps de travail correspondant aux prix" },
+  "settings_label": { "message": "Paramètres" },
+  "salary_label": { "message": "Salaire" },
+  "salary_type_label": { "message": "Type de salaire" },
+  "salary_type_hourly": { "message": "Horaire" },
+  "salary_type_daily": { "message": "Journalier" },
+  "salary_type_monthly": { "message": "Mensuel" },
+  "working_time_group_label": { "message": "Temps de travail" },
+  "working_hours_per_day_label": { "message": "Heures de travail par jour" },
+  "working_days_per_month_label": { "message": "Jours de travail par mois" },
+  "language_label": { "message": "Langue" },
+  "minutes_unit": { "message": "minutes" },
+  "hours_unit": { "message": "heures" },
+  "days_unit": { "message": "jours" },
+  "months_unit": { "message": "mois" },
+  "years_unit": { "message": "ans" },
+  "exclude_site": { "message": "Exclure" },
+  "include_site": { "message": "Inclure" },
+  "cannot_determine_site": { "message": "Impossible de déterminer le site" }
+}

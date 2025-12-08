@@ -1,0 +1,22 @@
+{
+  "ext_name": { "message": "Money is Time" },
+  "ext_description": { "message": "Zeigt, wie viel Arbeitszeit Preisen entspricht" },
+  "settings_label": { "message": "Einstellungen" },
+  "salary_label": { "message": "Gehalt" },
+  "salary_type_label": { "message": "Vergütungsart" },
+  "salary_type_hourly": { "message": "Stündlich" },
+  "salary_type_daily": { "message": "Täglich" },
+  "salary_type_monthly": { "message": "Monatlich" },
+  "working_time_group_label": { "message": "Arbeitszeit" },
+  "working_hours_per_day_label": { "message": "Arbeitsstunden pro Tag" },
+  "working_days_per_month_label": { "message": "Arbeitstage pro Monat" },
+  "language_label": { "message": "Sprache" },
+  "minutes_unit": { "message": "Minuten" },
+  "hours_unit": { "message": "Stunden" },
+  "days_unit": { "message": "Tage" },
+  "months_unit": { "message": "Monate" },
+  "years_unit": { "message": "Jahre" },
+  "exclude_site": { "message": "Ausschließen" },
+  "include_site": { "message": "Einbeziehen" },
+  "cannot_determine_site": { "message": "Seite kann nicht bestimmt werden" }
+}
