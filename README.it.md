@@ -1,6 +1,6 @@
 ﻿# MoneyIsTime
 
-[![en](https://img.shields.io/badge/lang-inglese-blue.svg)](https://github.com/lcucci/MoneyIsTime/blob/main/README.md)
+[![en](https://img.shields.io/badge/lang-english-blue.svg)](https://github.com/lcucci/MoneyIsTime/blob/main/README.md)
 
 Estensione browser che converte i prezzi dei prodotti nel tempo di lavoro necessario per poterseli permettere.
 
