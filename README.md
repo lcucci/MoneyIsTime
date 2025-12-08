@@ -40,23 +40,20 @@ Browser extension that converts product prices into the amount of work time requ
 
 ```plaintext
 .
-├── assets/                         # Static resources and translation files
-│   └── translations.json
-├── icons/                          # Icons used by the extension at various sizes
-│   ├── icon16.png
-│   ├── icon32.png
-│   ├── icon48.png
-│   └── icon128.png
-├── src/
-│   ├── background/
-│   │   └── index.js                # Service Worker: fetches exchange rates and translations
-│   ├── content/
-│   │   └── content.js              # Injected script: detects prices and adds time badges
-│   └── popup/
-│       ├── popup.html              # Popup UI markup for user settings
-│       ├── popup.css               # Styling for the popup interface
-│       └── popup.js                # Logic for saving settings, switching language, blacklist
-├── manifest.json                   # Main configuration file for the Chrome extension (MV3)
+├── chrome/                         # Chrome extension code
+│   ├── icons/                      # Icons used by the extension in various formats
+│   ├── _locales/                   # Translations for popup and badge
+│   ├── src/
+│   │   ├── background/
+│   │   │   └── index.js            # Service worker for exchange rates and translations
+│   │   ├── content/
+│   │   │   └── content.js          # Injected script that detects prices and adds badges
+│   │   └── popup/
+│   │       ├── popup.html          # Settings popup structure
+│   │       ├── popup.css           # Popup interface styles
+│   │       └── popup.js            # Logic for saving, language, and domain blacklist
+│   └────────── manifest.json       # Extension configuration (MV3)
+├── firefox/                        # Firefox extension code (work in progress)
 └── README.md                       # Project documentation
 ```
 
